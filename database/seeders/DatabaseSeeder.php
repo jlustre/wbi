@@ -17,12 +17,23 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'jlustre',
-            'email' => 'jclustre@gmail.com',
-            'password' => bcrypt('1111aaaa'),
-            'email_verified_at' => time(),
+            'id' => 1,
+            'name' => 'Zura',
+            'email' => 'zura@example.com',
+            'password' => bcrypt('123.321A'),
+            'email_verified_at' => time()
         ]);
-        
-        Project::factory()->count(30)->hasTasks(30)->create();
+        User::factory()->create([
+            'id' => 2,
+            'name' => 'John Smith',
+            'email' => 'john@example.com',
+            'password' => bcrypt('123.321A'),
+            'email_verified_at' => time()
+        ]);
+
+        Project::factory()
+            ->count(30)
+            ->hasTasks(30)
+            ->create();
     }
 }
